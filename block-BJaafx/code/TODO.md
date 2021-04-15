@@ -5,7 +5,7 @@ function input (total){
   let sum = 0;
   for( i = 0 ; i <= 10 ; i++ ){
     let value = +prompt(`enter 10 inputs`);
-    sum = sum + i;
+    sum = value  + sum;
     count ++
   }
   let avg = sum / count;
@@ -54,14 +54,15 @@ function getOddSum (max){
 5. Write a function named `getProductOfDigits` that accepts a parameter `num`. It returns the product of all the digits in the number.
 
 function getProductOfDigits (num){
-  let product = 1;
-  if (num < 0){
+  let product = 1
+  while(num>0){
+      product = product * (num % 10); 
+      num=Math.floor(num/10)
+      
+  }
+  return product
+  if(num<0){
     return `not a valid input`;
-  }else {
-    while(num != 0){
-      product = product * (num / 10); 
-    }
-    return product;
   }
 }
   
